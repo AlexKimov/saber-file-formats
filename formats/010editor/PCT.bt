@@ -1,0 +1,87 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+local const int FORMAT_RGBA32 = 0;
+local const int FORMAT_RGB24 = 2;
+local const int FORMAT_RGBA16 = 5;
+local const int FORMAT_DXT1 = 12;
+local const int FORMAT_DXT3 = 15;
+local const int FORMAT_DXT5 = 17;
+
+local uint imageType;
+local uint width, height, mmNum, i;
+while (1)  
+{
+  struct {
+    uint16 type;
+    uint offset;
+    switch (type) {
+      case 0xF0:
+        char magic[4];
+      break; 
+      case 0xF1:
+        uint w;
+        uint h;
+        width = w; 
+        height = h;
+      break;
+      case 0xF2:
+        uint it;
+        imageType = it; 
+      break;
+      case 0xF9:
+         uint mipmapNum;
+         mmNum = mipmapNum;   
+      break;
+      case 0xFA:
+         uint unk;  
+      break;
+      case 0xFB:
+         uint unk;
+      break;
+      case 0xF4:
+      break;
+    };
+  } HEADER;
+  if (HEADER.type == 0xF4) break;
+}
+
+if (imageType >= 12) {
+  uint size;
+  byte data[size - 4];
+};
+local uint w = width, h = height;
+
+for (i = 0; i < mmNum; ++i) {
+  struct { 
+    switch (imageType) {
+      case FORMAT_RGBA32: 
+        byte image[w*h*4];       
+      break;
+      case FORMAT_RGB24: 
+        byte image[w*h*3];       
+      break;
+      case FORMAT_RGBA16:
+        byte image[w*h*2];          
+      break;   
+      case FORMAT_DXT1:
+        byte image[w*h >> 1]; 
+      break; 
+      case FORMAT_DXT3:
+      case FORMAT_DXT5:       
+        byte image[w*h];          
+      break;
+    }
+  } MIP_MAP; 
+  w = (w >> 1);
+  h = (h >> 1);
+}
