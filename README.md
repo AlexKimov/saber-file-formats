@@ -8,7 +8,7 @@
 
 | № | Формат файла       | Шаблон (010Editor)     |   Описание |
 | :--- | :--------- | :----------- |  :---------- | 
-| 1 | .pct        | [PCT.bt](https://github.com/AlexKimov/saber-file-formats/tree/master/formats/010editor-templates/pct.bt)        | текстуры  |
+| 1 | .pct        | [PCT.bt](https://github.com/AlexKimov/saber-file-formats/tree/master/formats/010editor/PCT.bt)        | текстуры  |
 
 ## Инструменты
 
