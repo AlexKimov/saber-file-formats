@@ -1,0 +1,25 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+//FSeek(1098319174);
+
+uint num;
+struct {
+  uint length;
+  char name[length];
+  uint unk;
+  uint offset;
+  uint hash;
+  uint unpackedSize;
+  uint size;
+} fileRec[num] <optimize=false>;

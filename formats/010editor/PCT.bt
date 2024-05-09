@@ -35,8 +35,8 @@ while (1)
         height = h;
       break;
       case 0xF2:
-        uint it;
-        imageType = it; 
+        uint imgtype;
+        imageType = imgtype; 
       break;
       case 0xF9:
          uint mipmapNum;
@@ -52,7 +52,7 @@ while (1)
       break;
     };
   } HEADER;
-  if (HEADER.type == 0xF4) break;
+  if (HEADER.type == 0xF4 || HEADER.type == 0xFF) break;
 }
 
 if (imageType >= 12) {

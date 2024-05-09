@@ -1,0 +1,313 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local const int SECTION_TYPE_SOME_SECTION_OFFSET_OR_SIZE = 240;
+local const int SECTION_TYPE_OBJECT_VERTEXES = 241;
+local const int SECTION_TYPE_OBJECT_NAME = 244;
+local const int SECTION_TYPE_SOME_NUMBER1 = 246;
+local const int SECTION_TYPE_OBJECT_MATRIX_4X4 = 249;
+local const int SECTION_TYPE_MAT_NAME = 342;
+local const int SECTION_TYPE_MAT_NUMBER = 341;
+local const int SECTION_TYPE_FILESIZE = 740;
+local const int SECTION_TYPE_FILENAME = 741;
+local const int SECTION_TYPE_SOME_SECTION_SEPARATOR = 1;
+
+
+while (!FEof())  
+{
+  struct {
+    uint16 type;
+    uint nextOffset;
+    switch (type) {
+      case SECTION_TYPE_SOME_SECTION_SEPARATOR:
+      break; 
+      case SECTION_TYPE_SOME_SECTION_OFFSET_OR_SIZE:
+      break;
+      case SECTION_TYPE_OBJECT_VERTEXES:
+         uint num;
+         struct { 
+           float x;
+           float y;
+           float z;
+         } y[num];
+      break;
+      case 243:
+         uint l;
+      break;
+      case SECTION_TYPE_OBJECT_NAME:
+         string objectName;
+      break;
+      case 245:
+         uint l[4];
+      break;
+      case SECTION_TYPE_SOME_NUMBER1:
+         uint16 a;
+      break;
+      case 247:
+         uint a;
+      break;
+      case 248:
+         int index;
+      break;
+      case SECTION_TYPE_OBJECT_MATRIX_4X4:
+         float x;
+         float y;
+         float x;
+         float w;
+         float x;
+         float y;
+         float x;
+         float w;
+         float x;
+         float y;
+         float z;
+         float w;
+         float x;
+         float y;
+         float z;
+         float w;
+      break;
+      case 250:
+         int a;
+      break;
+      case 251:
+         int a;
+      break;
+      case 252:
+         uint a;
+      break;
+      case 253:
+         
+      break;
+      case 254:
+         uint a;    
+      break;
+      case 255:
+         uint16 a;
+         uint16 a;
+         uint16 a;         
+      break;
+      case 256:
+          uint num1; 
+          uint num2; 
+          struct { 
+            uint16 i1; 
+            uint16 i2; 
+            uint16 i3;
+          } op[num1];
+           struct { 
+            uint16 i1; 
+          } op1[num2];         
+      break;
+      case 257:
+      break;
+      case 258:
+         uint a;         
+      break;
+      case 259:
+         uint uvnumb;
+
+         struct {
+           float u;
+           float v;
+         } uv[uvnumb];      
+      break;
+      case 260:
+         uint num; 
+         struct { 
+           uint a;       
+           uint a;  
+           uint a;
+         } se[num];    
+      break;
+
+      case 261:
+        uint num;
+        uint num;
+      break;
+
+      case 262:
+         uint offset;       
+      break;
+
+      case 263:
+       
+      break;
+
+      case 264:
+         uint num;
+      break;
+
+      case 265:
+        uint num;
+        FSeek(offset);
+      break;
+
+      case 266:
+        uint num;
+        struct {
+          float y;
+          float y;
+          byte a;
+        } y;
+      break;
+
+      case 267:
+        uint k;
+      break;
+
+      case 268:
+        float k;
+      break;
+
+      case SECTION_TYPE_MAT_NUMBER:
+         uint materialNum;
+      break;  
+      case SECTION_TYPE_MAT_NAME:
+         string name;
+      break;
+      case 442:
+          string name;
+          
+      break;
+      case 541:
+         uint unk;
+      break;
+      case SECTION_TYPE_FILESIZE:
+      break; 
+      case SECTION_TYPE_FILENAME:
+          FSeek(nextOffset);
+      break;
+      case 742:
+         uint a;
+      break;
+      case 743:
+          string magic;
+          float a;
+          float b;
+          float b;
+          float b;
+          uint b;
+      break;
+      case 744:
+         uint a;
+      break;
+      case 745:
+         uint a;
+      break;
+      case 746:
+         uint a;
+         uint num;
+         struct {
+           float a;
+           float a;
+           float a;
+           float a;
+         } A[num];
+      break;
+      case 747:
+         uint a;
+         uint num;
+         struct { 
+           float yr[5];
+         } er[num];
+      break;
+      case 748:
+         uint a;
+         uint num;
+         struct {
+             float x[4];
+         } t[num];
+      break;
+      case 749:
+         uint a;
+         uint num;
+         struct {
+             float x[4];
+         } t[num];
+      break;
+      case 750:
+         uint a;
+      break;
+      case 751:
+        uint num;
+        uint a[num];
+        uint num;
+        uint num;
+      break;
+      case 752:
+        struct {
+          uint a; 
+          float aw;
+        } jk[1173];
+        FSeek(nextOffset);
+      break;
+      case 753:
+
+      break;
+      case 754:
+        string a;
+        float t[3519];    
+        FSeek(nextOffset);
+      break;
+      case 755:
+         uint a;
+      break;
+      case 756:
+         float a;
+      break;
+      case 757:
+         float a;
+      break;
+      case 758:
+         float a;
+         uint num;
+         struct {
+           float a;
+           float a;
+         } f[num];      
+      break;
+      case 759:
+         float a[10];
+      break;
+      case 760:
+           uint a;
+           float j[12];
+           uint a;
+           float j2[12];
+         FSeek(nextOffset);
+      break;
+      case 761:
+           uint a;
+      break;
+      case 762:
+         float a;
+         float a;
+         float a;
+         float a;
+         FSeek(nextOffset);
+      break;
+      case 763:
+         float a;
+         float a;
+         float a;
+         float a;
+      break;
+      case 764:
+         float a;
+         float a;
+         float a;
+      break;
+    };
+  } SECTION;
+}

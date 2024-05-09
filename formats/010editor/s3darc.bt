@@ -1,0 +1,36 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct {
+  uint unpackedSize;
+  uint size; 
+  byte data[size];
+} block1;
+
+struct {
+  uint unpackedSize;
+  uint size; 
+  byte data1[size];
+} block2;
+
+uint offset;
+struct {
+  byte data2[offset - FTell()];
+} block3;
+
+FSeek(offset);
+struct {
+  uint unpackedSize;
+  uint size;     
+  byte data2[size];
+} block4;
