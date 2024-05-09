@@ -1,0 +1,1 @@
+F:\git\qbms\quickbms.exe -Y -V -d -F "*.s3darc" s3darc.bms "F:\Games\Timeshift" unpacked_s3darc

@@ -1,0 +1,51 @@
+# Game: Timeshift (PC, 2007) (script 0.1)
+# Description:
+# script to unpack .s3darc
+# Link:
+
+get FN FILENAME
+comtype zlib
+
+#block 1
+get UNPACKED_SIZE LONG
+get SIZE LONG
+#Clog FN 8 SIZE UNPACKED_SIZE 
+xmath POS "SIZE + 8"
+GoTo POS
+
+#block 2
+get UNPACKED_SIZE LONG
+get SIZE LONG
+SavePos POS 
+#Clog FN POS SIZE UNPACKED_SIZE
+xmath POS "POS + SIZE"
+GoTo POS
+
+get FILES_OFFSET LONG
+SavePos POS
+xmath BLOCK_SIZE "FILES_OFFSET - POS"
+GoTo FILES_OFFSET
+
+#block 4 - file recs
+get UNPACKED_SIZE LONG
+get SIZE LONG
+SavePos POS
+Clog MEMORY_FILE POS SIZE UNPACKED_SIZE
+#Clog FN POS SIZE UNPACKED_SIZE
+
+if BLOCK_SIZE > 0
+    #block 3 - file data
+    get NUM LONG MEMORY_FILE
+    for i = 0 < NUM
+        get LENGTH LONG MEMORY_FILE
+        getDString FNAME LENGTH MEMORY_FILE 
+        get UNK LONG MEMORY_FILE
+        get OFFSET SIGNED_LONG MEMORY_FILE
+        get HASH LONG MEMORY_FILE
+        get UNPACKED_SIZE LONG MEMORY_FILE
+        get SIZE LONG MEMORY_FILE
+        if OFFSET > 0
+            Clog FNAME OFFSET SIZE UNPACKED_SIZE
+        endif 
+    next i
+endif
